@@ -39,7 +39,7 @@ var showSlide = function (n){
 	$slideshowDiv.appendChild($newSlide);
 }
 
-showSlide(0)
+showSlide(0);
 
 
 /* On load
@@ -85,7 +85,7 @@ var advanceSlideshow = function (){
 }
 
 
-var moveImage = setInterval(advanceSlideshow, 2500);
+var advanceImage = setInterval(advanceSlideshow, 2500);
 
 
 
@@ -93,6 +93,7 @@ var moveImage = setInterval(advanceSlideshow, 2500);
 
 //$-refers to DOM elements
 
+/////////////////////
 
 //1. Write a new function called killSlideshow. Make it turn off the interval, so that if you call this function, the slideshow stops advancing on it's own.
 //
@@ -103,13 +104,13 @@ var moveImage = setInterval(advanceSlideshow, 2500);
 
 
 var killSlideshow = function (){
-	clearInterval(moveImage);
+	clearInterval(advanceImage);
 }
 
 var decreaseSlideNuber = function(){
 	currentSlideNum--;
-	if (currentSlideNum == slides.length) {
-		currentSlideNum = 0};
+	if (currentSlideNum == -1) {
+		currentSlideNum = 5};
 }
 
 var reverseSlideshow = function (){
@@ -119,4 +120,5 @@ var reverseSlideshow = function (){
 	removeOldSlides();
 }
 
+var reverseImage = setInterval(reverseSlideshow, 2500);
 
